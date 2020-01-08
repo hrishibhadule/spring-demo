@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: test-server
-          image: springdemo.azurecr.io/spring-demo:latest
+          image: hrushirepo.azurecr.io/hrushirepo:latest
           imagePullPolicy: "Always"
           ports:
             - name: http-port
@@ -25,6 +25,7 @@ kind: Service
 metadata:
   name: spring-demo-service
 spec:
+  type: LoadBalancer
   ports:
     - name: http-port
       port: 80

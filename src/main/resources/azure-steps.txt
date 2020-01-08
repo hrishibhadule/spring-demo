@@ -9,7 +9,7 @@ az aks install-cli
 az aks get-credentials --resource-group spring-demo-rg --name spring-demo-aks
 
 --Registry creation
-az acr create --resource-group spring-demo-rg --name springdemo --sku Basic
+az acr create --resource-group spring-demo-rg --name hrushirepo --sku Basic
 
 --For browsing kubernetes dashboard
 az aks get-credentials --resource-group spring-demo-rg --name spring-demo-aks
