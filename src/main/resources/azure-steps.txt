@@ -1,0 +1,20 @@
+
+
+-- For resource creation
+az group create --name spring-demo-rg --location eastus
+
+--Kubernetes resource creation
+az aks create --resource-group spring-demo-rg --name spring-demo-aks --node-count 1 --generate-ssh-keys
+az aks install-cli
+az aks get-credentials --resource-group spring-demo-rg --name spring-demo-aks
+
+--Registry creation
+az acr create --resource-group spring-demo-rg --name springdemo --sku Basic
+
+--For browsing kubernetes dashboard
+az aks get-credentials --resource-group spring-demo-rg --name spring-demo-aks
+az aks browse --name spring-demo-aks --resource-group spring-demo-rg
+
+
+--for attaching load balancer
+kubectl expose rc test-server --port=8080 --target-port=8081 --name=spring-demo-service --type=LoadBalancer
