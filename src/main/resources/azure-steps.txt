@@ -3,13 +3,13 @@
 -- For resource creation
 az group create --name spring-demo-rg --location eastus
 
---Kubernetes resource creation
-az aks create --resource-group spring-demo-rg --name spring-demo-aks --node-count 1 --generate-ssh-keys
-az aks install-cli
-az aks get-credentials --resource-group spring-demo-rg --name spring-demo-aks
-
 --Registry creation
 az acr create --resource-group spring-demo-rg --name hrushirepo --sku Basic
+
+--Kubernetes resource creation
+az aks create --resource-group spring-demo-rg --name spring-demo-aks --node-count 1 --generate-ssh-keys --attach-acr hrushirepo
+az aks install-cli
+az aks get-credentials --resource-group spring-demo-rg --name spring-demo-aks
 
 --For browsing kubernetes dashboard
 az aks get-credentials --resource-group spring-demo-rg --name spring-demo-aks
