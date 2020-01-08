@@ -18,3 +18,6 @@ az aks browse --name spring-demo-aks --resource-group spring-demo-rg
 
 --for attaching load balancer
 kubectl expose rc test-server --port=8080 --target-port=8081 --name=spring-demo-service --type=LoadBalancer
+
+--for attaching dashboard binding
+kubectl create clusterrolebinding kubernetes-dashboard --clusterrole=cluster-admin --serviceaccount=kube-system:kubernetes-dashboard		
