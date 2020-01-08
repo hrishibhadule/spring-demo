@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: hrishibhadulespringdemo 
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: hrishibhadulespringdemo 
+    spec:
+      containers:
+        - name: hrishibhadulespringdemo 
+          image: springdemo.azurecr.io/hrishibhadulespringdemo
+          ports:
+          - containerPort: 80
