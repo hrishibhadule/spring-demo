@@ -22,4 +22,6 @@ kubectl expose rc test-server --port=8080 --target-port=8081 --name=spring-demo-
 --for attaching dashboard binding
 kubectl create clusterrolebinding kubernetes-dashboard --clusterrole=cluster-admin --serviceaccount=kube-system:kubernetes-dashboard
 
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0-beta8/aio/deploy/recommended.yaml
+
 --test comment
