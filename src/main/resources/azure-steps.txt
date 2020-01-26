@@ -25,3 +25,15 @@ kubectl create clusterrolebinding kubernetes-dashboard --clusterrole=cluster-adm
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0-beta8/aio/deploy/recommended.yaml
 
 --test comment
+GET
+http://localhost:8080/demo/GetCustomerDetails
+
+POST
+http://localhost:8080/demo/addCustomerDetails
+
+{
+ customerId : 6767855,
+ customerName: "Rick Kempinski",
+ customerAddress: "New York",
+ businessUnit "Invesments"
+}
