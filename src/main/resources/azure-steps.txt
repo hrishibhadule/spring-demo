@@ -16,7 +16,7 @@ az aks get-credentials --resource-group spring-demo-rg --name spring-demo-aks
 az aks browse --name spring-demo-aks --resource-group spring-demo-rg
 
 
---for attaching load balancer
+--for attaching load balancer. Do this after CI/CD
 kubectl expose rc test-server --port=8080 --target-port=8081 --name=spring-demo-service --type=LoadBalancer
 
 --for attaching dashboard binding
